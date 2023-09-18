@@ -1,13 +1,3 @@
-/**********************************************************************************
-// Level1 (Código Fonte) 
-// 
-// Criação:     14 Fev 2013
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Nível 1 do jogo
-//
-**********************************************************************************/
 
 #include "GravityGuy.h"
 #include "Home.h"
@@ -15,7 +5,7 @@
 #include "Level2.h"
 #include "GameOver.h"
 #include "Player.h"
-#include "Platform.h"
+#include "Pipe.h"
 #include "Background.h"
 #include "Floor.h"
 
@@ -44,13 +34,16 @@ void Level1::Init()
     scene->Add(floor, STATIC);
 
     // adiciona jogador na cena
-    scene->Add(GravityGuy::player, MOVING);
+    //scene->Add(GravityGuy::player, MOVING);
+
+    //Moedas
+    
+    
 
     // ----------------------
     // plataformas
     // ----------------------
-
-    Platform * plat;
+    Pipe * pipe;
     float posX, posY;
     uint  platType;
     Color white { 1,1,1,1 };
@@ -65,8 +58,8 @@ void Level1::Init()
         {
             // lê linha com informações da plataforma
             fin >> posY; fin >> platType;
-            plat = new Platform(posX, posY, platType, white);
-            scene->Add(plat, STATIC);
+            pipe = new Pipe(posX, posY, platType, white);
+            scene->Add(pipe, STATIC);
         }
         else
         {
