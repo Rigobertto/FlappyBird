@@ -40,7 +40,7 @@ void GravityGuy::Init()
     player = new Player();
 
     // inicializa nível de abertura do jogo
-    level = new Home();
+    level = new GameOver();
     level->Init();
 }
 
