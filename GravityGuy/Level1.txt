@@ -1,7 +1,7 @@
-// Gravity Guy
-// Criação:        14 Fev 2013
-// Atualização:    27 Set 2021
-// Descrição:   Posição das plataformas do nível 1
+// Flappy Bird
+// Criação:        17 Set 2023
+// Atualização:    18 Set 2023
+// Descrição:   Posição dos pipes do nível 1
 //
 // Cano de cima
 //  posX    posY    platType
