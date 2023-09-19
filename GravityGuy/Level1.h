@@ -1,16 +1,6 @@
-/**********************************************************************************
-// Level1 (Arquivo de Cabeçalho)
-// 
-// Criação:     14 Fev 2013
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Nível 1 do jogo
-//
-**********************************************************************************/
 
-#ifndef _GRAVITYGUY_LEVEL1_H_
-#define _GRAVITYGUY_LEVEL1_H_
+#ifndef _FLAPPYBIRD_LEVEL1_H_
+#define _FLAPPYBIRD_LEVEL1_H_
 
 // ------------------------------------------------------------------------------
 // Inclusões

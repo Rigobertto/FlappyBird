@@ -1,16 +1,6 @@
-/**********************************************************************************
-// Level2 (Arquivo de Cabeçalho)
-//
-// Criação:     27 Set 2021
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Nível 2 do jogo
-//
-**********************************************************************************/
 
-#ifndef _GRAVITYGUY_LEVEL2_H_
-#define _GRAVITYGUY_LEVEL2_H_
+#ifndef _FLAPPYBIRD_LEVEL2_H_
+#define _FLAPPYBIRD_LEVEL2_H_
 
 // ------------------------------------------------------------------------------
 // Inclusões

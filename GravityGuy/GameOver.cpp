@@ -102,7 +102,7 @@ void GameOver::Update()
 void GameOver::Draw()
 {
     //background->Draw();
-    gameover->Draw(window->CenterX(), window->CenterY(), Layer::MIDDLE);
+    gameover->Draw(window->CenterX(), window->CenterY(), Layer::FRONT);
     //anim->Draw(window->CenterX(), 200, Layer::FRONT);
     //desenha itens do menu
     scene->Draw();
