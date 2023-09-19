@@ -28,7 +28,7 @@ void Level2::Init()
     scene = new Scene();
 
     // pano de fundo do jogo
-    string src = "Resources/backgrounds/background-level2.png";
+    string src = "Resources/backgrounds/background-level-2.png";
     backg = new Background(150, Color{ 1,1,1,1 }, src);
     scene->Add(backg, STATIC);
 

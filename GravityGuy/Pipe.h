@@ -20,7 +20,7 @@
 
 // ---------------------------------------------------------------------------------
 
-enum PIPETYPES {UP, DOWN, FINISH };
+enum PIPETYPES {GREENUP, GREENDOWN, FINISH, REDUP, REDDOWN, BLUEUP, BLUEDOWN, CIANUP, CIANDOWN};
 
 // ---------------------------------------------------------------------------------
 
