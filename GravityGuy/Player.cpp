@@ -1,18 +1,7 @@
-/**********************************************************************************
-// Player (Código Fonte)
-// 
-// Criação:     20 Abr 2012
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Define uma classe para o jogador 
-//
-**********************************************************************************/
 
 #include "Player.h"
 #include "GravityGuy.h"
-#include "Platform.h"
-
+#include "Pipe.h"
 // ---------------------------------------------------------------------------------
 
 Player::Player()

@@ -34,7 +34,6 @@ private:
     static const int MaxItens = 5;
 
     Mouse* mouse = nullptr;         // objeto mouse
-    Sprite * backg = nullptr;       // pano de fundo
     Sprite* logo = nullptr;
     Background* background = nullptr;
     TileSet * tileset = nullptr;    // tileset da animação

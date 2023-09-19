@@ -1,13 +1,3 @@
-/**********************************************************************************
-// Item (Arquivo de Cabeçalho)
-//
-// Criação:     14 Mai 2012
-// Atualização: 31 Ago 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Define um item de menu
-//
-**********************************************************************************/
 
 #ifndef _FLAPPYBIRD_ITEM_H_
 #define _FLAPPYBIRD_ITEM_H_

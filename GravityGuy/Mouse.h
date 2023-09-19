@@ -1,13 +1,3 @@
-/**********************************************************************************
-// Mouse (Arquivo de Cabeçalho)
-// 
-// Criação:     14 Mai 2012
-// Atualização: 22 Set 2021
-// Compilador:  Visual C++ 2019
-//
-// Descrição:   Gerencia mouse na tela
-//
-**********************************************************************************/
 
 #ifndef _FLAPPYBIRD_MOUSE_H_
 #define _FLAPPYBIRD_MOUSE_H_

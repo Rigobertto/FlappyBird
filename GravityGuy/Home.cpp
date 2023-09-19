@@ -1,13 +1,3 @@
-/**********************************************************************************
-// Home (Código Fonte) 
-// 
-// Criação:     14 Fev 2013
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Tela de abertura do jogo
-//
-**********************************************************************************/
 
 #include "Engine.h"
 #include "GravityGuy.h"
@@ -25,7 +15,6 @@ void Home::Init()
 {
 
     scene = new Scene();
-    backg = new Sprite("");
 
     string src = "Resources/backgrounds/start-screen.png";
     background = new Background(50, Color{ 1,1,1,1 },src);
@@ -58,25 +47,8 @@ void Home::Init()
 
 void Home::Update()
 {
-    // sai com o pressionar do ESC
-    /*if (window->KeyPress(VK_ESCAPE))
-        window->Close();*/
-    
-    // se a tecla ENTER for pressionada
     anim->NextFrame();
     scene->Update();
-    //anim->NextFrame();
-    if (window->KeyPress(VK_RETURN))
-    {
-        GravityGuy::audio->Stop(MENU);
-        GravityGuy::NextLevel<Level1>();
-    }
-    else
-    {
-        anim->NextFrame();
-    }
-
-    // atualiza objeto mouse
     
      // fecha a janela ao pressionar ESC
     if (window->KeyDown(VK_ESCAPE))
@@ -116,21 +88,23 @@ void Home::Update()
         menu[i]->Update();
     }
 
-    // habilita/desabilita bounding box
-    //if (window->KeyPress('B'))
-        //viewBBox = !viewBBox;
 }
 
 // ------------------------------------------------------------------------------
 
 void Home::Draw()
 {
-    //background->Draw();
-    //backg->Draw(window->CenterX(), window->CenterY(), Layer::BACK);
+    //desenha a logo do jogo
     logo->Draw(window->CenterX(), 100, Layer::FRONT);
+
+    //desenha o passaro
     anim->Draw(window->CenterX(), 200, Layer::FRONT);
+
     // desenha itens do menu
     scene->Draw();
+
+    if (GravityGuy::viewBBox)
+        scene->DrawBBox();
     
 }
 
@@ -138,13 +112,11 @@ void Home::Draw()
 
 void Home::Finalize()
 {
-    //delete menu;
     delete background;
     delete logo;
     delete mouse;
     delete anim;
     delete tileset;
-    delete backg;
 }
 
 // ------------------------------------------------------------------------------

@@ -6,10 +6,10 @@ Coin::Coin(float posX, float posY, uint platType, Color tint) : color(tint)
 {
     switch (platType)
     {
-    case RED:  tileset = new TileSet("Resources/coins/red-coin.png", 16, 16, 5, 5); type = RED; break;
-    case SILVER: tileset = new TileSet("Resources/coins/silver-coin.png", 16, 16, 5, 5); type = SILVER; break;
-    case GOLD: tileset = new TileSet("Resources/coins/gold-coin.png", 16, 16, 5, 5); type = GOLD; break;
-    case MEDAL: tileset = new TileSet("Resources/coins/medal.png", 16, 16, 5, 5); type = MEDAL; break;
+    case COIN:  tileset = new TileSet("Resources/coins/coin.png", 32, 32, 5, 5); type = COIN; break;
+    case SILVER: tileset = new TileSet("Resources/coins/silver-medal.png", 88, 88, 1, 1); type = SILVER; break;
+    case GOLD: tileset = new TileSet("Resources/coins/gold-medal.png", 88, 88, 1, 1); type = GOLD; break;
+    case BRONZE: tileset = new TileSet("Resources/coins/bronze-medal.png", 88, 88, 1, 1); type = BRONZE; break;
     }
     anim = new Animation(tileset, 0.125f, true);
 

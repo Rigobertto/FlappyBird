@@ -1,13 +1,3 @@
-/**********************************************************************************
-// Platform (Arquivo de Cabeçalho)
-// 
-// Criação:     21 Abr 2012
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Plataformas do jogo
-//
-**********************************************************************************/
 
 #ifndef _GRAVITYGUY_PLATFORM_H_
 #define _GRAVITYGUY_PLATFORM_H_

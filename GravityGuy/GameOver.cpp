@@ -1,13 +1,3 @@
-/**********************************************************************************
-// GameOver (Arquivo de Cabeçalho)
-// 
-// Criação:     14 Fev 2013
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Fim do jogo
-//
-**********************************************************************************/
 
 #include "Engine.h"
 #include "GameOver.h"
@@ -16,13 +6,16 @@
 #include "Background.h"
 #include "Scene.h"
 #include "Animation.h"
+#include "Level1.h"
 
 // ----------------------------------------------------------------------
 Scene* GameOver::scene = nullptr;
+
 void GameOver::Init()
 {
     scene = new Scene();
     gameover = new Sprite("Resources/botoes/gameover.png");
+
     string src = "Resources/backgrounds/start-screen.png";
     background = new Background(50, Color{ 1,1,1,1 }, src);
     scene->Add(background, STATIC);
@@ -45,21 +38,8 @@ void GameOver::Init()
 
 void GameOver::Update()
 {
-    if (window->KeyPress(VK_ESCAPE) || window->KeyPress(VK_RETURN))
-        GravityGuy::NextLevel<Home>();
-    scene->Update();
-    //anim->NextFrame();
-    if (window->KeyPress(VK_RETURN))
-    {
-        GravityGuy::audio->Stop(MENU);
-        GravityGuy::NextLevel<Home>();
-    }
-    else
-    {
-        //anim->NextFrame();
-    }
 
-    // atualiza objeto mouse
+    scene->Update();
 
      // fecha a janela ao pressionar ESC
     if (window->KeyDown(VK_ESCAPE))
@@ -81,9 +61,12 @@ void GameOver::Update()
                 {
                 case PLAYAGAIN:
                     GravityGuy::audio->Stop(MENU);
+                    GravityGuy::NextLevel<Level1>();
+                    break;
+                case HOME: 
+                    GravityGuy::audio->Stop(MENU);
                     GravityGuy::NextLevel<Home>();
                     break;
-                case HOME: break;
                 }
                 break;
             }
@@ -101,18 +84,17 @@ void GameOver::Update()
 
 void GameOver::Draw()
 {
-    //background->Draw();
     gameover->Draw(window->CenterX(), window->CenterY(), Layer::FRONT);
-    //anim->Draw(window->CenterX(), 200, Layer::FRONT);
-    //desenha itens do menu
     scene->Draw();
+
+    if (GravityGuy::viewBBox)
+        scene->DrawBBox();
 }
 
 // ----------------------------------------------------------------------
 
 void GameOver::Finalize()
 {
-    //delete menu;
     delete background;
     delete mouse;
     delete gameover;

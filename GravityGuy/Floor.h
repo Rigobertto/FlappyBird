@@ -1,16 +1,6 @@
-/**********************************************************************************
-// Background (Arquivo de Cabeçalho)
-//
-// Criação:     21 Abr 2012
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Plano de fundo do jogo
-//
-**********************************************************************************/
 
-#ifndef _GRAVITYGUY_FLOOR_H_
-#define _GRAVITYGUY_FLOOR_H_
+#ifndef _FLAPPYBIRD_FLOOR_H_
+#define _FLAPPYBIRD_FLOOR_H_
 
 // ---------------------------------------------------------------------------------
 

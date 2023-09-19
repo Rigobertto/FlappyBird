@@ -34,15 +34,19 @@ void Level1::Init()
     floor = new Floor("Resources/floor/floor-level1.png", Color{ 1,1,1,1 });
     scene->Add(floor, STATIC);
 
-    // adiciona jogador na cena
+    //-----------------------
+    // adiciona jogador
+    // ----------------------
     //scene->Add(GravityGuy::player, MOVING);
 
+    //-----------------------
     //Moedas
+    //-----------------------
     
     
 
     // ----------------------
-    // plataformas
+    // pipes
     // ----------------------
     Pipe * pipe;
     float posX, posY;
@@ -57,7 +61,7 @@ void Level1::Init()
     {
         if (fin.good())
         {
-            // lê linha com informações da plataforma
+            // lê linha com informações dos pipes
             fin >> posY; fin >> platType;
             pipe = new Pipe(posX, posY, platType, white);
             scene->Add(pipe, STATIC);

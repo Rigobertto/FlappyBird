@@ -1,16 +1,6 @@
-/**********************************************************************************
-// Player (Arquivo de Cabeçalho)
-// 
-// Criação:     20 Abr 2012
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Define uma classe para o jogador 
-//
-**********************************************************************************/
 
-#ifndef _GRAVITYGUY_PLAYER_H_
-#define _GRAVITYGUY_PLAYER_H_
+#ifndef _FLAPPYBIRD_PLAYER_H_
+#define _FLAPPYBIRD_PLAYER_H_
 
 // ---------------------------------------------------------------------------------
 // Inclusões
