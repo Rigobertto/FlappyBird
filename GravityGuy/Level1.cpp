@@ -27,7 +27,8 @@ void Level1::Init()
     scene = new Scene();
 
     // pano de fundo do jogo
-    backg = new Background(150, Color{ 1,1,1,1 });
+    string src = "Resources/backgrounds/background-level1.png";
+    backg = new Background(150, Color{ 1,1,1,1 }, src);
     scene->Add(backg, STATIC);
 
     floor = new Floor("Resources/floor/floor-level1.png", Color{ 1,1,1,1 });

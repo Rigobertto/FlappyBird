@@ -1,4 +1,3 @@
-
 #include "GravityGuy.h"
 #include "Home.h"
 #include "Level1.h"
@@ -18,17 +17,17 @@ using std::string;
 // ------------------------------------------------------------------------------
 // Inicializa membros estáticos da classe
 
-Scene* Level2::scene = nullptr;
+Scene* Level3::scene = nullptr;
 
 // ------------------------------------------------------------------------------
 
-void Level2::Init()
+void Level3::Init()
 {
     // cria gerenciador de cena
     scene = new Scene();
 
     // pano de fundo do jogo
-    string src = "Resources/backgrounds/background-level2.png";
+    string src = "Resources/backgrounds/background-level3.png";
     backg = new Background(150, Color{ 1,1,1,1 }, src);
     scene->Add(backg, STATIC);
 
@@ -51,7 +50,7 @@ void Level2::Init()
     Color white{ 1,1,1,1 };
 
     ifstream fin;
-    fin.open("Level2.txt");
+    fin.open("Level3.txt");
 
     fin >> posX;
     while (!fin.eof())
@@ -85,7 +84,7 @@ void Level2::Init()
 
 // ------------------------------------------------------------------------------
 
-void Level2::Update()
+void Level3::Update()
 {
     if (window->KeyPress(VK_ESCAPE))
     {
@@ -99,7 +98,7 @@ void Level2::Update()
         GravityGuy::NextLevel<GameOver>();
         GravityGuy::player->Reset();
     }
-    else if (GravityGuy::player->Level() == 2 || window->KeyPress('N'))
+    else if (GravityGuy::player->Level() == 3 || window->KeyPress('N'))
     {
         GravityGuy::NextLevel<Level3>();
     }
@@ -112,7 +111,7 @@ void Level2::Update()
 
 // ------------------------------------------------------------------------------
 
-void Level2::Draw()
+void Level3::Draw()
 {
     backg->Draw();
     scene->Draw();
@@ -123,7 +122,7 @@ void Level2::Draw()
 
 // ------------------------------------------------------------------------------
 
-void Level2::Finalize()
+void Level3::Finalize()
 {
     scene->Remove(GravityGuy::player, MOVING);
     delete scene;

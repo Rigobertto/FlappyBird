@@ -1,6 +1,5 @@
-
-#ifndef _FLAPPYBIRD_LEVEL2_H_
-#define _FLAPPYBIRD_LEVEL2_H_
+#ifndef _FLAPPYBIRD_LEVEL3_H_
+#define _FLAPPYBIRD_LEVEL3_H_
 
 // ------------------------------------------------------------------------------
 // Inclusões
@@ -13,7 +12,7 @@
 
 // ------------------------------------------------------------------------------
 
-class Level2 : public Game
+class Level3 : public Game
 {
 private:
     Background* backg = nullptr;   // pano de fundo animado

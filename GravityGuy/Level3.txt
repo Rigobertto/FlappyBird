@@ -1,7 +1,7 @@
 // Flappy Bird
 // Criação:        17 Set 2023
 // Atualização:    18 Set 2023
-// Descrição:   Posição dos pipes do nível 2
+// Descrição:   Posição dos pipes do nível 3
 //
 // Cano de cima
 //  posX    posY    platType
@@ -30,3 +30,4 @@
     4320    940        1
     4800    740        1
     5140    840        1
+    

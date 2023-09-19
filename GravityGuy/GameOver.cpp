@@ -23,8 +23,8 @@ void GameOver::Init()
 {
     scene = new Scene();
     gameover = new Sprite("Resources/botoes/gameover.png");
-
-    background = new Background(50, Color{ 1,1,1,1 });
+    string src = "Resources/backgrounds/start-screen.png";
+    background = new Background(50, Color{ 1,1,1,1 }, src);
     scene->Add(background, STATIC);
 
 

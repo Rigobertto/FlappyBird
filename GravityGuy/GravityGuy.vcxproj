@@ -170,6 +170,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Level2.cpp" />
+    <ClCompile Include="Level3.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pipe.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Level2.h" />
+    <ClInclude Include="level3.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Pipe.h" />
@@ -254,6 +256,7 @@
   <ItemGroup>
     <Text Include="Level1.txt" />
     <Text Include="Level2.txt" />
+    <Text Include="Level3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

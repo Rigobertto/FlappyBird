@@ -33,7 +33,7 @@ private:
     float speed = 0;
 
 public:
-    Background(float speed, Color tint);             // construtor
+    Background(float speed, Color tint, string src); // construtor
     ~Background();                      // destrutor
 
     void Update();                      // atualização do objeto

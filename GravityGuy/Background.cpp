@@ -3,14 +3,14 @@
 
 // ---------------------------------------------------------------------------------
 
-Background::Background(float speed, Color tint) : color(tint)
+Background::Background(float speed, Color tint, string src) : color(tint)
 {
     MoveTo(window->CenterX(), window->CenterY(), Layer::BACK);
     xB = x;
     this->speed = speed;
     // carrega imagens
     //imgF = new Image("Resources/floor/floor-level1.png"); // 480x584
-    imgB = new Image("Resources/backgrounds/background-level1.png");
+    imgB = new Image(src);
 
     
     backgB1 = new Sprite(imgB);

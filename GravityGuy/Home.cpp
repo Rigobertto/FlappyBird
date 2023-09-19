@@ -27,7 +27,8 @@ void Home::Init()
     scene = new Scene();
     backg = new Sprite("");
 
-    background = new Background(50, Color{ 1,1,1,1 });
+    string src = "Resources/backgrounds/start-screen.png";
+    background = new Background(50, Color{ 1,1,1,1 },src);
     scene->Add(background, STATIC);
 
     logo = new Sprite("Resources/botoes/logo.png");
