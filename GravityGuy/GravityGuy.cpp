@@ -29,7 +29,7 @@ void GravityGuy::Init()
 {
     // cria sistema de áudio
     audio = new Audio();
-    audio->Add(MENU, "Resources/sounds/start2.wav");
+    audio->Add(MENU, "Resources/sounds/Musicainicio.wav");
     audio->Add(MUSIC, "Resources/sounds/start.wav");
     audio->Add(TRANSITION, "Resources/Transition.wav");
 
