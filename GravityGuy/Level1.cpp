@@ -8,11 +8,15 @@
 #include "Pipe.h"
 #include "Background.h"
 #include "Floor.h"
+#include "Coin.h"
 
 #include <string>
 #include <fstream>
 using std::ifstream;
 using std::string;
+#include <iostream>
+
+using namespace std;
 
 // ------------------------------------------------------------------------------
 // Inicializa membros estáticos da classe
@@ -42,8 +46,47 @@ void Level1::Init()
     //-----------------------
     //Moedas
     //-----------------------
-    
-    
+    Coin * coin;
+
+    //float coinX, coinY;
+    float xx = 0;
+    float yy = 0;
+    char caractere;
+    bool primeiraLinha = true;
+
+    ifstream finC;
+    finC.open("coins-level1.txt");
+
+    if (finC.is_open()) {
+        char caractere;
+        while (finC.get(caractere)) {
+            if (primeiraLinha && caractere == '\n') {
+                primeiraLinha = false;
+                continue;
+            }
+
+            if (caractere == 'M') {
+                xx = xx + 32;
+            }
+            else if (caractere == 'O') {
+                coin = new Coin(xx+16, yy+16);
+                scene->Add(coin, STATIC);
+                xx = xx + 32;
+            }
+            else if (caractere == '\n') {
+                yy = yy + 32;
+                xx = 0;
+            }
+            else if (caractere == ' ') {
+                continue; // Ignora os espaços e continua com a próxima iteração
+            }
+        }
+
+        finC.close();
+    }
+    else {
+        std::cout << "Erro ao abrir o arquivo." << std::endl;
+    }
 
     // ----------------------
     // pipes

@@ -14,6 +14,7 @@
 #include "Home.h"
 #include "GameOver.h"
 #include "Level1.h"
+#include "NextStage.h"
 
 // ------------------------------------------------------------------------------
 
@@ -40,7 +41,7 @@ void GravityGuy::Init()
     player = new Player();
 
     // inicializa nível de abertura do jogo
-    level = new GameOver();
+    level = new NextStage();
     level->Init();
 }
 

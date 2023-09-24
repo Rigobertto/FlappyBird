@@ -21,12 +21,10 @@ private:
     TileSet * tileset = nullptr;            // sprite da plataforma
     Animation* anim = nullptr;
 
-    Color color;                            // cor da plataforma
+    //Color color;                            // cor da plataforma
 
 public:
-    Coin(float posX, float posY,
-        uint platType,
-        Color tint);                   // construtor    
+    Coin(float posX, float posY);                 // construtor    
     ~Coin();                            // destrutor
 
     void Update();                          // atualização do objeto

@@ -2,15 +2,10 @@
 
 // ---------------------------------------------------------------------------------
 
-Coin::Coin(float posX, float posY, uint platType, Color tint) : color(tint)
+Coin::Coin(float posX, float posY)
 {
-    switch (platType)
-    {
-    case COIN:  tileset = new TileSet("Resources/coins/coin.png", 32, 32, 5, 5); type = COIN; break;
-    case SILVER: tileset = new TileSet("Resources/coins/silver-medal.png", 88, 88, 1, 1); type = SILVER; break;
-    case GOLD: tileset = new TileSet("Resources/coins/gold-medal.png", 88, 88, 1, 1); type = GOLD; break;
-    case BRONZE: tileset = new TileSet("Resources/coins/bronze-medal.png", 88, 88, 1, 1); type = BRONZE; break;
-    }
+    
+    tileset = new TileSet("Resources/coins/coin.png", 32, 32, 5, 5);
     anim = new Animation(tileset, 0.125f, true);
 
     BBox(new Rect(

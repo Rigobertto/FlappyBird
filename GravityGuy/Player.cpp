@@ -28,7 +28,7 @@ Player::Player()
     level = 0;
 
     // posição inicial
-    MoveTo(window->CenterX(), 24.0f, Layer::FRONT);
+    MoveTo(190.0f, window->CenterY(), Layer::FRONT);
 }
 
 // ---------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ Player::~Player()
 void Player::Reset()
 {
     // volta ao estado inicial
-    MoveTo(window->CenterX(), 24.0f, Layer::FRONT);
+    MoveTo(190.0f, window->CenterY(), Layer::FRONT);
     gravity = NORMAL;
     level = 0;
 }

@@ -172,6 +172,7 @@
     <ClCompile Include="Level2.cpp" />
     <ClCompile Include="Level3.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="NextStage.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="Level2.h" />
     <ClInclude Include="level3.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="NextStage.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Pipe.h" />
     <ClInclude Include="Player.h" />

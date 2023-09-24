@@ -1,6 +1,6 @@
 
-#ifndef _FLAPPYBIRD_GAMEOVER_H_
-#define _FLAPPYBIRD_GAMEOVER_H_
+#ifndef _FLAPPYBIRD_NEXTSTAGE_H_
+#define _FLAPPYBIRD_NEXTSTAGE_H_
 
 // ------------------------------------------------------------------------------
 
@@ -15,15 +15,15 @@
 
 // ------------------------------------------------------------------------------
 
-enum MenuGameOver { PLAYAGAIN, HOME };
+enum MenuNextStage { NEXTLEVEL, HOMESMALL };
 
-class GameOver : public Game
+class NextStage : public Game
 {
 private:
     static const int MaxItens = 2;
 
     Mouse* mouse = nullptr;         // objeto mouse
-    Sprite* gameover = nullptr;       // pano de fundo
+    Sprite* nextstage = nullptr;       // pano de fundo
     Background* background = nullptr;
     Item* menu[MaxItens] = { 0, 0 };
 

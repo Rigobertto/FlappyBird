@@ -12,6 +12,7 @@
 // ------------------------------------------------------------------------------
 
 enum Gravity {NORMAL,INVERTED};         // tipo da gravidade
+enum Skin {REDBIRD,BLUEBIRD, YELLOWBIRD};
 
 // ---------------------------------------------------------------------------------
 
@@ -22,8 +23,16 @@ private:
     Animation * anim;                   // animação do personagem
     uint        gravity;                // gravidade atuando sobre o jogador
     int         level;                  // nível finalizado
+    uint skin;
     
 public:
+    float* coinslevel1 = 0;
+    float* coinslevel2 = 0;
+    float* coinslevel3 = 0;
+    bool goldmedal = false;
+    bool bronzemedal = false;
+    bool silvermedal = false;
+
     Player();                           // construtor
     ~Player();                          // destrutor
 
