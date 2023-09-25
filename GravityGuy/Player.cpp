@@ -68,21 +68,9 @@ void Player::OnCollision(Object * obj)
             //MoveTo(window->CenterX(), obj->Y() + 32);
     }
 
-  
-    /*if (window->KeyPress(VK_SPACE))
-    {
-        //gravity = !gravity;
-
         // toca efeito sonoro
         //GravityGuy::audio->Play(TRANSITION);
 
-        // tira player da plataforma para evitar 
-        // detecção de colisão no quadro seguinte
-        //if (gravity == NORMAL)
-            //Translate(0, 12);
-        //else
-            //Translate(0 , -12);
-    }*/
 }
 
 // ---------------------------------------------------------------------------------
