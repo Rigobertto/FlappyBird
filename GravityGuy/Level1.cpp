@@ -41,7 +41,7 @@ void Level1::Init()
     //-----------------------
     // adiciona jogador
     // ----------------------
-    //scene->Add(GravityGuy::player, MOVING);
+    scene->Add(GravityGuy::player, MOVING);
 
     //-----------------------
     //Moedas

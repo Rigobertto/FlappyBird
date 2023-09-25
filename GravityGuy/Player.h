@@ -32,6 +32,8 @@ public:
     bool goldmedal = false;
     bool bronzemedal = false;
     bool silvermedal = false;
+    float jumpMax = 5000;
+    float totalJump = 0;
 
     Player();                           // construtor
     ~Player();                          // destrutor
@@ -40,10 +42,11 @@ public:
     int Level();                        // último nível finalizado
     float Bottom();                     // coordenadas da base
     float Top();                        // coordenadas do topo
-
+    bool keyCtrl = false;
     void OnCollision(Object * obj);     // resolução da colisão
     void Update();                      // atualização do objeto
     void Draw();                        // desenho do objeto
+
 };
 
 // ---------------------------------------------------------------------------------

@@ -1,14 +1,3 @@
-/**********************************************************************************
-// Background (Código Fonte)
-//
-// Criação:     21 Abr 2012
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Plano de fundo do jogo
-//
-**********************************************************************************/
-
 #include "Floor.h"
 
 // ---------------------------------------------------------------------------------
@@ -49,15 +38,6 @@ void Floor::Update()
 
 void Floor::Draw()
 {
-    // desenha pano de fundo
-
-    // desenha prédios mais próximos
-    /*backgF1->Draw(xF, y, Layer::FRONT, 1.0f, 0.0f, color);
-    backgF2->Draw(xF + imgF->Width(), window->Height() / 2.0f, Layer::FRONT, 1.0f, 0.0f, color);
-
-    // traz pano de fundo de volta para dentro da tela
-    if (xF + imgF->Width() / 2.0f < 0)
-        xF += imgF->Width();*/
 
     //desenha prédios mais próximos
     backgF1->Draw(xF, y, Layer::MIDDLE);

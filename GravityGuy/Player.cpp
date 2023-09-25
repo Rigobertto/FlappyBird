@@ -62,48 +62,48 @@ void Player::OnCollision(Object * obj)
     else
     {
         // mantém personagem em cima da plataforma
-        if (gravity == NORMAL)
-            MoveTo(window->CenterX(), obj->Y() - 32);
-        else
-            MoveTo(window->CenterX(), obj->Y() + 32);
+        //if (gravity == NORMAL)
+          //  MoveTo(window->CenterX(), obj->Y() - 32);
+        //else
+            //MoveTo(window->CenterX(), obj->Y() + 32);
     }
 
-    // ----------------------------------------------------------
-    // Processa teclas pressionadas
-    // ----------------------------------------------------------
-    // jogador só pode alterar a gravidade enquanto estiver
-    // em cima de uma plataforma, não é possível a mudança no ar
-    // ----------------------------------------------------------
-
-    if (window->KeyPress(VK_SPACE))
+  
+    /*if (window->KeyPress(VK_SPACE))
     {
-        gravity = !gravity;
+        //gravity = !gravity;
 
         // toca efeito sonoro
-        GravityGuy::audio->Play(TRANSITION);
+        //GravityGuy::audio->Play(TRANSITION);
 
         // tira player da plataforma para evitar 
         // detecção de colisão no quadro seguinte
-        if (gravity == NORMAL)
-            Translate(0, 12);
-        else
-            Translate(0 , -12);
-    }
+        //if (gravity == NORMAL)
+            //Translate(0, 12);
+        //else
+            //Translate(0 , -12);
+    }*/
 }
 
 // ---------------------------------------------------------------------------------
 
 void Player::Update()
 {
-    // ação da gravidade sobre o personagem
-    if (gravity == NORMAL)    
-        Translate(0, 300 * gameTime);
-    else
-        Translate(0, -300 * gameTime);
-
-    // atualiza animação
-    anim->Select(gravity);
     anim->NextFrame();
+
+    if (gravity == NORMAL)
+        Translate(0, 200 * gameTime);
+ 
+
+    if (totalJump < jumpMax && window->KeyDown(VK_SPACE)) {
+        Translate(0, -1000 * gameTime);
+        totalJump += 600;
+    }
+    else if ( window->KeyUp(VK_SPACE)) {
+        totalJump = 0;
+        
+    }
+
 }
 
 // ---------------------------------------------------------------------------------

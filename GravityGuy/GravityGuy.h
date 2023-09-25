@@ -1,13 +1,3 @@
-/**********************************************************************************
-// GravityGuy (Arquivo de Cabeçalho)
-// 
-// Criação:     05 Out 2011
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Jogo estilo plataforma usando a engine do curso
-//
-**********************************************************************************/
 
 #ifndef _FLAPPYBIRD_H_
 #define _FLAPPYBIRD_H_

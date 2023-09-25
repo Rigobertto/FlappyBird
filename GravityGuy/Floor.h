@@ -9,7 +9,7 @@
 #include "Sprite.h"                     // background é composto por sprites
 
 // ---------------------------------------------------------------------------------
-
+enum floorType {FLOOR};
 class Floor : public Object
 {
 private:
