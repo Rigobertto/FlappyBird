@@ -20,7 +20,7 @@ void Home::Init()
     background = new Background(50, Color{ 1,1,1,1 },src);
     scene->Add(background, STATIC);
 
-    logo = new Sprite("Resources/botoes/logo.png");
+    logo = new Sprite("Resources/botoes/logo2.png");
     tileset = new TileSet("Resources/player/yellow-bird.png", 53, 38, 3, 3);
     anim = new Animation(tileset, 0.20f, true);
     
