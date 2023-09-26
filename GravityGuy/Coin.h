@@ -24,12 +24,13 @@ private:
     //Color color;                            // cor da plataforma
 
 public:
+    
     Coin(float posX, float posY);                 // construtor    
     ~Coin();                            // destrutor
 
     void Update();                          // atualização do objeto
     void Draw();                            // desenho do objeto
-    void OnCollision();
+    void OnCollision(Object * obj);
 };
 
 // ---------------------------------------------------------------------------------

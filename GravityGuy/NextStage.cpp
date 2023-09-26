@@ -9,6 +9,8 @@
 #include "Level1.h"
 #include "Level2.h"
 #include "Level3.h"
+#include <iostream>
+#include <string>
 
 // ----------------------------------------------------------------------
 Scene* NextStage::scene = nullptr;
@@ -22,6 +24,10 @@ void NextStage::Init()
     background = new Background(50, Color{ 1,1,1,1 }, src);
     scene->Add(background, STATIC);
 
+    // cria fontes
+    upheaval = new Font("Resources/font/upheaval.png");
+    upheaval->Spacing("Resources/font/upheaval.dat");
+    upheaval->Spacing(120);
 
     // cria objeto mouse
     mouse = new Mouse();
@@ -62,10 +68,20 @@ void NextStage::Update()
                 switch (menu[i]->Type())
                 {
                 case NEXTLEVEL:
-                    GravityGuy::audio->Stop(MENU);
-                    GravityGuy::NextLevel<Level1>();
+                    if (nivel == 1) {
+                        nivel = 2;
+                        GravityGuy::NextLevel<Level2>();
+                    }
+                    else if (nivel == 2) {
+                        nivel = 3;
+                        GravityGuy::NextLevel<Level3>();
+                    }
                     break;
                 case HOMESMALL:
+                    nivel = 1;
+                    coinslevel1 = 0;
+                    coinslevel2 = 0;
+                    coinslevel3 = 0;
                     GravityGuy::audio->Stop(MENU);
                     GravityGuy::NextLevel<Home>();
                     break;
@@ -86,7 +102,30 @@ void NextStage::Update()
 
 void NextStage::Draw()
 {
+    Color vermelho(0.97f, 0.47f, 0.36f, 1.0f);
+    Color creme(0.94f, 0.91f, 0.76f, 1.0f);
+    
     nextstage->Draw(window->CenterX(), window->CenterY(), Layer::FRONT);
+
+    if (nivel == 1) {
+        
+        string numeroString = std::to_string(coinslevel1);
+        upheaval->Draw(600, 403, "x" + numeroString, creme, Layer::FRONT, 0.2);
+        upheaval->Draw(600, 400, "x" + numeroString, vermelho, Layer::FRONT, 0.2);
+    }
+    else if (nivel == 2) {
+        
+        string numeroString = std::to_string(coinslevel2);
+        upheaval->Draw(600, 403, "x" + numeroString, creme, Layer::FRONT, 0.2);
+        upheaval->Draw(600, 400, "x" + numeroString, vermelho, Layer::FRONT, 0.2);
+    }
+    else if (nivel == 3) {
+        
+        string numeroString = std::to_string(coinslevel3);
+        upheaval->Draw(600, 403, "x" + numeroString, creme, Layer::FRONT, 0.2);
+        upheaval->Draw(600, 400, "x" + numeroString, vermelho, Layer::FRONT, 0.2);
+    }
+    
     scene->Draw();
 
     if (GravityGuy::viewBBox)
@@ -97,6 +136,7 @@ void NextStage::Draw()
 
 void NextStage::Finalize()
 {
+    delete upheaval;
     delete background;
     delete mouse;
     delete nextstage;

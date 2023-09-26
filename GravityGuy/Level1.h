@@ -18,6 +18,7 @@ class Level1 : public Game
 private:
     Background* backg = nullptr;   // pano de fundo animado
     Floor* floor = nullptr;
+    //Pipe* cano = nullptr;
 
 public:
     static Scene* scene;           // cena do nível

@@ -2,19 +2,33 @@
 #include "Player.h"
 #include "GravityGuy.h"
 #include "Pipe.h"
+#include "Coin.h"
+#include "Level1.h"
+#include "NextStage.h"
+#include "GameOver.h"
 // ---------------------------------------------------------------------------------
+
+//int* Player::coinslevel1 = 0;
+//int* Player::coinslevel2 = 0;
+int nivel = 1;
+int coinslevel1 = 0;
+int coinslevel2 = 0;
+int coinslevel3 = 0;
+//int* Player::coinslevel3 = 0;
 
 Player::Player()
 {
     tileset = new TileSet("Resources/player/yellow-bird.png", 53, 38, 1, 3);
     anim = new Animation(tileset, 0.25f, true);
-
+    coinslevel1 = 0;
+    coinslevel2 = 0;
+    coinslevel3 = 0;
     // sequências de animação do player
-    uint jump[2] = {1, 2};
-    uint normal[1] = {0};
+    uint jump[3] = {0, 1, 2};
+    uint normal[3] = {0, 1, 2};
 
-    anim->Add(INVERTED, jump, 2);
-    anim->Add(NORMAL, normal, 1);
+    anim->Add(INVERTED, jump, 3);
+    anim->Add(NORMAL, normal, 3);
 
     // cria bounding box
     BBox(new Rect(
@@ -54,12 +68,17 @@ void Player::Reset()
 
 void Player::OnCollision(Object * obj)
 {
-    if (obj->Type() == FINISH)
+    if (obj->Type() == GREENDOWN || obj->Type() == GREENUP)
+    {
+        GravityGuy::NextLevel<GameOver>();
+    }
+
+    /*if (obj->Type() == FINISH)
     {
         // chegou ao final do nível
         level++;
-    }
-    else
+    }*/
+
     {
         // mantém personagem em cima da plataforma
         //if (gravity == NORMAL)
@@ -70,7 +89,9 @@ void Player::OnCollision(Object * obj)
 
         // toca efeito sonoro
         //GravityGuy::audio->Play(TRANSITION);
-
+    //if (obj->Type() == COIN) {
+        //Level1::scene->Delete(obj, STATIC);
+    //}
 }
 
 // ---------------------------------------------------------------------------------

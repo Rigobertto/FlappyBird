@@ -13,7 +13,10 @@
 
 enum Gravity {NORMAL,INVERTED};         // tipo da gravidade
 enum Skin {REDBIRD,BLUEBIRD, YELLOWBIRD};
-
+extern int nivel;
+extern int coinslevel1;
+extern int coinslevel2;
+extern int coinslevel3;
 // ---------------------------------------------------------------------------------
 
 class Player : public Object
@@ -26,9 +29,9 @@ private:
     uint skin;
     
 public:
-    float* coinslevel1 = 0;
-    float* coinslevel2 = 0;
-    float* coinslevel3 = 0;
+    /*static int coinslevel1;
+    static int coinslevel2;
+    static int coinslevel3;*/
     bool goldmedal = false;
     bool bronzemedal = false;
     bool silvermedal = false;

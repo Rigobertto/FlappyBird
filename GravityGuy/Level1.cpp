@@ -9,6 +9,7 @@
 #include "Background.h"
 #include "Floor.h"
 #include "Coin.h"
+#include "NextStage.h"
 
 #include <string>
 #include <fstream>
@@ -147,13 +148,16 @@ void Level1::Update()
     }
     else if (GravityGuy::player->Level() == 1 || window->KeyPress('N'))
     {
-        GravityGuy::NextLevel<Level2>();
+        nivel = 1;
+        GravityGuy::audio->Stop(MUSIC);
+        GravityGuy::NextLevel<NextStage>();
     }
     else
     {
         scene->Update();
         scene->CollisionDetection();
-    }    
+    }
+
 }
 
 // ------------------------------------------------------------------------------

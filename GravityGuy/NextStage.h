@@ -12,6 +12,7 @@
 #include "Animation.h"
 #include "Item.h"
 #include "Mouse.h"
+#include "Font.h"
 
 // ------------------------------------------------------------------------------
 
@@ -22,6 +23,7 @@ class NextStage : public Game
 private:
     static const int MaxItens = 2;
 
+    Font * upheaval = nullptr;
     Mouse* mouse = nullptr;         // objeto mouse
     Sprite* nextstage = nullptr;       // pano de fundo
     Background* background = nullptr;

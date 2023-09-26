@@ -1,13 +1,4 @@
-/**********************************************************************************
-// GravityGuy (Código Fonte)
-// 
-// Criação:     05 Out 2011
-// Atualização: 04 Set 2023
-// Compilador:  Visual C++ 2022
-//
-// Descrição:   Jogo estilo plataforma usando a engine do curso
-//
-**********************************************************************************/
+
 
 #include "Engine.h"
 #include "GravityGuy.h"
@@ -41,7 +32,7 @@ void GravityGuy::Init()
     player = new Player();
 
     // inicializa nível de abertura do jogo
-    level = new NextStage();
+    level = new Home();
     level->Init();
 }
 
@@ -89,7 +80,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     engine->window->Mode(WINDOWED);
     engine->window->Size(960, 640);
     engine->window->Color(84, 192, 201);
-    engine->window->Title("Gravity Guy");
+    engine->window->Title("Flappy Cat");
     engine->window->Icon(IDI_ICON);
     engine->window->Cursor(IDC_CURSOR);
     //engine->graphics->VSync(true);

@@ -8,6 +8,7 @@
 #include "Object.h"                                     // interface de Object
 #include "Sprite.h"                                     // desenho de sprites
 
+
 // ---------------------------------------------------------------------------------
 
 enum PIPETYPES {GREENUP, GREENDOWN, FINISH, REDUP, REDDOWN, BLUEUP, BLUEDOWN, CIANUP, CIANDOWN};
@@ -19,6 +20,7 @@ class Pipe : public Object
 private:
     Sprite* pipe = nullptr;            // sprite da plataforma
     Color color;                            // cor da plataforma
+    bool gameover = false;
 
 public:
     Pipe(float posX, float posY,
@@ -28,6 +30,9 @@ public:
 
     void Update();                          // atualização do objeto
     void Draw();                            // desenho do objeto
+    void OnCollision(Object * obj);
+    bool isCollision();
+    
 };
 
 // ---------------------------------------------------------------------------------

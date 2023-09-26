@@ -60,11 +60,21 @@ void GameOver::Update()
                 switch (menu[i]->Type())
                 {
                 case PLAYAGAIN:
+                    nivel = 1;
+                    coinslevel1 = 0;
+                    coinslevel2 = 0;
+                    coinslevel3 = 0;
                     GravityGuy::audio->Stop(MENU);
-                    GravityGuy::NextLevel<Level1>();
+                    GravityGuy::player->Reset();
+                    GravityGuy::NextLevel<Level1>();                  
                     break;
-                case HOME: 
+                case HOME:
+                    nivel = 1;
+                    coinslevel1 = 0;
+                    coinslevel2 = 0;
+                    coinslevel3 = 0;
                     GravityGuy::audio->Stop(MENU);
+                    GravityGuy::player->Reset();
                     GravityGuy::NextLevel<Home>();
                     break;
                 }

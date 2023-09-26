@@ -10,6 +10,7 @@
 #include "Background.h"
 #include "Floor.h"
 #include "Coin.h"
+#include "NextStage.h"
 
 #include <string>
 #include <fstream>
@@ -39,7 +40,7 @@ void Level2::Init()
     scene->Add(floor, STATIC);
 
     // adiciona jogador na cena
-    //scene->Add(GravityGuy::player, MOVING);
+    scene->Add(GravityGuy::player, MOVING);
 
     //-----------------------
     //Moedas
@@ -148,7 +149,8 @@ void Level2::Update()
     }
     else if (GravityGuy::player->Level() == 2 || window->KeyPress('N'))
     {
-        GravityGuy::NextLevel<Level3>();
+        nivel = 2;
+        GravityGuy::NextLevel<NextStage>();
     }
     else
     {

@@ -1,4 +1,6 @@
 #include "Pipe.h"
+#include "GravityGuy.h"
+#include "GameOver.h"
 
 // ---------------------------------------------------------------------------------
 
@@ -45,3 +47,11 @@ void Pipe::Update()
 }
 
 // -------------------------------------------------------------------------------
+
+void Pipe::OnCollision(Object * obj) {
+    gameover = true;
+}
+
+bool Pipe::isCollision() {
+    return gameover;
+}
