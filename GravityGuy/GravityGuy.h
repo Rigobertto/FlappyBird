@@ -12,7 +12,7 @@
 
 // ------------------------------------------------------------------------------
 
-enum Sounds {MENU, MUSIC, TRANSITION};
+enum Sounds {MENU, MUSIC, TRANSITION, MOEDA, PULO};
 // ------------------------------------------------------------------------------
 
 class GravityGuy : public Game

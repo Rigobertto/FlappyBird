@@ -23,8 +23,10 @@ void GravityGuy::Init()
     // cria sistema de áudio
     audio = new Audio();
     audio->Add(MENU, "Resources/sounds/Musicainicio.wav");
-    audio->Add(MUSIC, "Resources/sounds/start.wav");
+    audio->Add(MUSIC, "Resources/sounds/StardewValley.wav");
     audio->Add(TRANSITION, "Resources/Transition.wav");
+    audio->Add(MOEDA, "Resources/sounds/moeda.wav");
+    audio->Add(PULO, "Resources/sounds/pulo.wav");
 
     // bounding box não visível
     viewBBox = false;

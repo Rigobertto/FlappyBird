@@ -72,6 +72,7 @@ void Player::OnCollision(Object * obj)
     {
         //GravityGuy::NextLevel<GameOver>();
         GravityGuy::gameover = true;
+        GravityGuy::audio->Play(TRANSITION);
     }
 
     /*if (obj->Type() == FINISH)
@@ -90,8 +91,8 @@ void Player::OnCollision(Object * obj)
 
 
     //toca efeito sonoro
-    GravityGuy::audio->Play(TRANSITION);
     if (obj->Type() == COIN) {
+        GravityGuy::audio->Play(MOEDA);
         Level1::scene->Delete(obj, STATIC);
     }
 }
@@ -107,6 +108,7 @@ void Player::Update()
  
 
     if (totalJump < jumpMax && window->KeyDown(VK_SPACE)) {
+        GravityGuy::audio->Play(PULO);
         Translate(0, -1000 * gameTime);
         totalJump += 600;
     }
