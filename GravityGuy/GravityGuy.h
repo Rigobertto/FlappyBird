@@ -25,6 +25,7 @@ public:
     static Audio * audio;           // sistema de áudio
     static bool viewBBox;           // estado da bounding box
 
+    static bool gameover;
     void Init();                    // inicializa jogo
     void Update();                  // atualiza lógica do jogo
     void Draw();                    // desenha jogo

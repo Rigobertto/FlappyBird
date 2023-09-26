@@ -68,9 +68,10 @@ void Player::Reset()
 
 void Player::OnCollision(Object * obj)
 {
-    if (obj->Type() == GREENDOWN || obj->Type() == GREENUP)
+    if (obj->Type() == GREENUP || obj->Type() == GREENDOWN || obj->Type() == REDUP || obj->Type() == REDDOWN || obj->Type() == BLUEUP || obj->Type() == BLUEDOWN)
     {
-        GravityGuy::NextLevel<GameOver>();
+        //GravityGuy::NextLevel<GameOver>();
+        GravityGuy::gameover = true;
     }
 
     /*if (obj->Type() == FINISH)
@@ -87,11 +88,12 @@ void Player::OnCollision(Object * obj)
             //MoveTo(window->CenterX(), obj->Y() + 32);
     }
 
-        // toca efeito sonoro
-        //GravityGuy::audio->Play(TRANSITION);
-    //if (obj->Type() == COIN) {
-        //Level1::scene->Delete(obj, STATIC);
-    //}
+
+    //toca efeito sonoro
+    GravityGuy::audio->Play(TRANSITION);
+    if (obj->Type() == COIN) {
+        Level1::scene->Delete(obj, STATIC);
+    }
 }
 
 // ---------------------------------------------------------------------------------

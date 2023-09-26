@@ -4,6 +4,7 @@
 #include "Level3.h"
 #include "Player.h"
 #include "GravityGuy.h"
+#include "Pipe.h"
 
 // ---------------------------------------------------------------------------------
 
@@ -20,6 +21,8 @@ Coin::Coin(float posX, float posY)
         tileset->TileHeight() / 2.0f));
 
     MoveTo(posX, posY, Layer::MIDDLE);
+
+    type = COIN;
 }
 
 // ---------------------------------------------------------------------------------
@@ -42,6 +45,8 @@ void Coin::Update()
 // -------------------------------------------------------------------------------
 
 void Coin::OnCollision(Object* obj) {
+
+    uint teste = obj->Type();
     
     if (nivel == 1) {
         Level1::scene->Delete(this, STATIC);

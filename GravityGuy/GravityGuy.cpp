@@ -14,6 +14,7 @@ Game*   GravityGuy::level = nullptr;
 Player* GravityGuy::player = nullptr;
 Audio*  GravityGuy::audio = nullptr;
 bool    GravityGuy::viewBBox = false;
+bool GravityGuy::gameover = false;
 
 // ------------------------------------------------------------------------------
 
@@ -40,6 +41,12 @@ void GravityGuy::Init()
 
 void GravityGuy::Update()
 {
+    if (gameover)
+    {
+        GravityGuy::NextLevel<GameOver>();
+        gameover = false;
+    }
+
     // habilita/desabilita visualização da bounding box
     if (window->KeyPress('B'))
         viewBBox = !viewBBox;    

@@ -11,7 +11,8 @@
 
 // ---------------------------------------------------------------------------------
 
-enum PIPETYPES {GREENUP, GREENDOWN, FINISH, REDUP, REDDOWN, BLUEUP, BLUEDOWN, CIANUP, CIANDOWN};
+enum PIPETYPES {GREENUP, GREENDOWN, FINISH, REDUP, REDDOWN, BLUEUP, BLUEDOWN, CIANUP, CIANDOWN, COIN, SILVER, GOLD, BRONZE
+};
 
 // ---------------------------------------------------------------------------------
 
