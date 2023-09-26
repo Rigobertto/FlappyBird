@@ -4,6 +4,8 @@
 #include "Pipe.h"
 #include "Coin.h"
 #include "Level1.h"
+#include "Level2.h"
+#include "Level3.h"
 #include "NextStage.h"
 #include "GameOver.h"
 // ---------------------------------------------------------------------------------
@@ -93,7 +95,18 @@ void Player::OnCollision(Object * obj)
     //toca efeito sonoro
     if (obj->Type() == COIN) {
         GravityGuy::audio->Play(MOEDA);
-        Level1::scene->Delete(obj, STATIC);
+        if (nivel == 1) {
+            coinslevel1 += 1;
+            Level1::scene->Delete(obj, STATIC);
+        }
+        else if (nivel == 2) {
+            coinslevel2 += 1;
+            Level2::scene->Delete(obj, STATIC);
+        }
+        else if (nivel == 3) {
+            coinslevel3 += 1;
+            Level3::scene->Delete(obj, STATIC);
+        }
     }
 }
 

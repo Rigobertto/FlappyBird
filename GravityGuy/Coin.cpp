@@ -45,19 +45,17 @@ void Coin::Update()
 // -------------------------------------------------------------------------------
 
 void Coin::OnCollision(Object* obj) {
-
-    uint teste = obj->Type();
     
-    if (nivel == 1) {
-        Level1::scene->Delete(this, STATIC);
-        coinslevel1 += 1;
-    }
-    else if (nivel == 2) {
-        Level2::scene->Delete(this, STATIC);
-        coinslevel2 += 1;
-    }
-    else if(nivel == 3) {
-        Level3::scene->Delete(this, STATIC);
-        coinslevel3 += 1;
-    }
+    //if (nivel == 1) {
+    //    Level1::scene->Delete(this, STATIC);
+    //    coinslevel1 += 1;
+    //}
+    //else if (nivel == 2) {
+    //    Level2::scene->Delete(this, STATIC);
+    //    coinslevel2 += 1;
+    //}
+    //else if(nivel == 3) {
+    //    Level3::scene->Delete(this, STATIC);
+    //    coinslevel3 += 1;
+    //}
 }

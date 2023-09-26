@@ -26,7 +26,7 @@ void GravityGuy::Init()
     audio->Add(MUSIC, "Resources/sounds/StardewValley.wav");
     audio->Add(TRANSITION, "Resources/Transition.wav");
     audio->Add(MOEDA, "Resources/sounds/moeda.wav");
-    audio->Add(PULO, "Resources/sounds/pulo.wav");
+    audio->Add(PULO, "Resources/sounds/pulo.wav",3);
 
     // bounding box não visível
     viewBBox = false;
@@ -45,7 +45,8 @@ void GravityGuy::Update()
 {
     if (gameover)
     {
-        GravityGuy::NextLevel<GameOver>();
+        NextLevel<GameOver>();
+        audio->Stop(MUSIC);
         gameover = false;
     }
 
